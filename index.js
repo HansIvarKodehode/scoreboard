@@ -3,13 +3,13 @@ let gs = document.getElementById("guestScore");
 let dbg = document.getElementById("debugging");
 // let areWeDebugging = true;
 
-document.getElementById("home1").addEventListener("click", h1);
-document.getElementById("home2").addEventListener("click", h2);
-document.getElementById("home3").addEventListener("click", h3);
+document.getElementById("home1").addEventListener("click", () => add(1, hs));
+document.getElementById("home2").addEventListener("click", () => add(2, hs));
+document.getElementById("home3").addEventListener("click", () => add(3, hs));
 
-document.getElementById("guest1").addEventListener("click", g1);
-document.getElementById("guest2").addEventListener("click", g2);
-document.getElementById("guest3").addEventListener("click", g3);
+document.getElementById("guest1").addEventListener("click", () => add(1, gs));
+document.getElementById("guest2").addEventListener("click", () => add(2, gs));
+document.getElementById("guest3").addEventListener("click", () => add(3, gs));
 
 function add(numb, whom) {
   let toBeAdded = Number(whom.textContent);
@@ -26,24 +26,4 @@ function add(numb, whom) {
       dbg.textContent = "hs: " + whom.textContent;
     }
   }
-}
-
-function h1() {
-  add(1, hs);
-}
-function h2() {
-  add(2, hs);
-}
-function h3() {
-  add(3, hs);
-}
-
-function g1() {
-  add(1, gs);
-}
-function g2() {
-  add(2, gs);
-}
-function g3() {
-  add(3, gs);
 }
